@@ -2,8 +2,10 @@ package com.locydragon.advancelib.api;
 
 import com.locydragon.advancelib.api.exception.PluginInitializeException;
 import com.locydragon.advancelib.api.exception.Validate;
+import com.locydragon.advancelib.api.inject.InjectUnit;
 import com.locydragon.advancelib.core.Advance;
 import com.locydragon.advancelib.core.AdvanceLogger;
+import com.locydragon.advancelib.core.Core;
 import com.locydragon.advancelib.core.plugin.AdvancePluginLoader;
 
 public abstract class AdvancePlugin {
@@ -30,6 +32,10 @@ public abstract class AdvancePlugin {
 
 	public AdvanceLogger getLogger() {
 		return this.advanceLogger;
+	}
+
+	public void uploadUnit(InjectUnit unit) {
+		Core.units.add(unit);
 	}
 
 	public AdvancePlugin() {}
